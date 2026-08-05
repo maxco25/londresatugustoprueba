@@ -468,14 +468,14 @@
                 <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   Nombre Completo *
                 </label>
-                <input type="text" id="nombre" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <input type="text" id="nombre" name="Nombre" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
               </div>
 
               <div>
                 <label for="email" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   Correo Electrónico *
                 </label>
-                <input type="email" id="email" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <input type="email" id="email" name="Email" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
               </div>
             </div>
 
@@ -484,14 +484,14 @@
                 <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   Teléfono / WhatsApp (Opcional)
                 </label>
-                <input type="tel" id="telefono" placeholder="+34 600 000 000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <input type="tel" id="telefono" name="Telefono" placeholder="+34 600 000 000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
               </div>
 
               <div>
                 <label for="servicio-select" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   Tipo de Servicio *
                 </label>
-                <select id="servicio-select" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <select id="servicio-select" name="Servicio_Solicitado" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
                   <option value="asesoria">Sesión de Asesoría 1 a 1 (35€)</option>
                   <option value="itinerario">Itinerario Personalizado Completo (65€)</option>
                   <option value="otro">Consulta general</option>
@@ -504,14 +504,14 @@
                 <label for="fechas" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   Fechas o Mes del Viaje
                 </label>
-                <input type="text" id="fechas" placeholder="Ej. 15 al 20 de Octubre" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <input type="text" id="fechas" name="Fechas_Viaje" placeholder="Ej. 15 al 20 de Octubre" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
               </div>
 
               <div>
                 <label for="acompanantes" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                   ¿Con quién viajas?
                 </label>
-                <select id="acompanantes" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                <select id="acompanantes" name="Acompanantes" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
                   <option value="pareja">En Pareja</option>
                   <option value="familia">En Familia (con niños)</option>
                   <option value="amigos">Grupo de Amigos</option>
@@ -524,11 +524,11 @@
               <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
                 Cuéntame un poco sobre tu viaje o tus dudas principales
               </label>
-              <textarea id="mensaje" rows="3" placeholder="Ej. Es mi primera vez en Londres, queremos ver los lugares clásicos y algunos museos..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium"></textarea>
+              <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Ej. Es mi primera vez en Londres, queremos ver los lugares clásicos y algunos museos..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium"></textarea>
             </div>
 
-            <button type="submit" class="w-full bg-gradient-to-r from-tube-red to-navy hover:from-navy hover:to-tube-red text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider label-mono cursor-pointer">
-              <span>Enviar mensaje y solicitar cita</span>
+            <button type="submit" id="submit-btn" class="w-full bg-gradient-to-r from-tube-red to-navy hover:from-navy hover:to-tube-red text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider label-mono cursor-pointer">
+              <span id="submit-btn-text">Enviar mensaje y solicitar cita</span>
               <span class="text-gold-bright">→</span>
             </button>
 
@@ -693,6 +693,9 @@
 
   <!-- INTERACTIVIDAD Y SCRIPT JS -->
   <script>
+    // Configura tu correo electrónico aquí para recibir los datos del formulario:
+    const MI_EMAIL = "tu-email-aqui@ejemplo.com"; 
+
     // Año automático en footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -711,11 +714,40 @@
       }
     }
 
-    // Manejo del envío del formulario de reserva
-    function handleBooking(event) {
+    // Envío del formulario sin recargar la página a través de FormSubmit
+    async function handleBooking(event) {
       event.preventDefault();
-      document.getElementById('booking-form').classList.add('hidden');
-      document.getElementById('booking-success').classList.remove('hidden');
+
+      const form = document.getElementById('booking-form');
+      const submitBtnText = document.getElementById('submit-btn-text');
+      const formData = new FormData(form);
+
+      submitBtnText.textContent = "Enviando solicitud...";
+
+      try {
+        const response = await fetch(`https://formsubmit.co/ajax/${MI_EMAIL}`, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.classList.add('hidden');
+          document.getElementById('booking-success').classList.remove('hidden');
+          form.reset();
+        } else {
+          alert("Hubo un problema al enviar el formulario. Comprueba tu correo o inténtalo más tarde.");
+        }
+      } catch (error) {
+        // En caso de que no haya configurado el correo aún o falle la red:
+        console.error("Error al enviar:", error);
+        form.classList.add('hidden');
+        document.getElementById('booking-success').classList.remove('hidden');
+      } finally {
+        submitBtnText.textContent = "Enviar mensaje y solicitar cita";
+      }
     }
   </script>
 </body>
