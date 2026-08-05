@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Londres a tu Gusto | Asesoría y Diseño de Viajes Personalizados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0f172a',
+              dark: '#0a0f1d',
+              light: '#1e293b'
+            },
+            gold: {
+              DEFAULT: '#d97706',
+              bright: '#f59e0b',
+              light: '#fbbf24'
+            },
+            tube: {
+              red: '#dc2626',
+              blue: '#1e3a8a',
+              grey: '#e2e8f0'
+            },
+            moonlight: '#f8fafc'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            mono: ['Space Mono', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Efecto de resplandor para el logo */
+    .logo-glow {
+      filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.35));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .logo-glow:hover {
+      filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.65));
+      transform: scale(1.04);
+    }
+    /* Estilo barra de metro */
+    .tube-line-bg {
+      background: linear-gradient(90deg, #dc2626 0%, #f59e0b 50%, #1e3a8a 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-gold selection:text-white">
+
+  <!-- BARRA SUPERIOR INFORMATIVA METRO -->
+  <div class="bg-navy-dark text-white border-b border-gold/20 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-bold tracking-wider uppercase text-[11px] text-gold-bright label-mono">Línea Directa Activa:</span>
+        <span class="text-slate-300">Reserva tu asesoría 1 a 1 para tu viaje a Londres</span>
+      </div>
+      <div class="flex items-center gap-3 text-[11px] font-semibold text-slate-400">
+        <span class="inline-flex items-center gap-1 bg-navy px-2 py-0.5 rounded border border-slate-700">
+          <span class="text-tube-red font-extrabold">●</span> TfL Inspired Design
+        </span>
+        <span class="text-gold-light">Asesoría Humana Local</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CABECERA PRINCIPAL: SIMULACIÓN DE LÍNEA DE METRO -->
+  <header class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/30 shadow-xl text-white">
+    <!-- Trazado de línea de metro horizontal -->
+    <div class="h-1.5 w-full tube-line-bg"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <div class="flex items-center justify-between gap-4">
+
+        <!-- ESTACIÓN ORIGEN (LOGO) -->
+        <a href="#" class="group flex items-center gap-3 shrink-0">
+          <div class="relative">
+            <!-- Imagen exterior logo.png -->
+            <img 
+              src="logo.png" 
+              alt="Londres a tu Gusto" 
+              class="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover logo-glow"
+              onerror="this.onerror=null; this.src='https://placehold.co/200x200/0f172a/f59e0b?text=LTG+Logo';"
+            >
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="bg-tube-red text-white text-[9px] font-black uppercase px-1.5 py-0.2 rounded tracking-widest label-mono">Origen</span>
+              <span class="text-xs text-gold-bright font-serif italic">Estación Principal</span>
+            </div>
+            <span class="font-serif text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-gold-bright transition-colors">
+              Londres a tu Gusto
+            </span>
+          </div>
+        </a>
+
+        <!-- NAVEGACIÓN - PARADAS DE LA LÍNEA (DESKTOP) -->
+        <nav class="hidden lg:flex items-center gap-1 xl:gap-2 relative py-2">
+          <!-- Línea visual de conexión de estaciones -->
+          <div class="absolute left-4 right-4 top-1/2 -translate-y-1/2 h-1 bg-slate-700 -z-10 rounded-full"></div>
+
+          <a href="#servicios" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-navy-light/90 hover:bg-gold hover:text-navy border border-slate-700 hover:border-gold transition-all flex items-center gap-1.5 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-tube-red group-hover:scale-125 transition-transform"></span>
+            <span>Servicios</span>
+          </a>
+
+          <a href="#por-que-experto" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-navy-light/90 hover:bg-gold hover:text-navy border border-slate-700 hover:border-gold transition-all flex items-center gap-1.5 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-tube-red group-hover:scale-125 transition-transform"></span>
+            <span>Experto vs IA</span>
+          </a>
+
+          <a href="#mind-the-gap" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-navy-light/90 hover:bg-gold hover:text-navy border border-slate-700 hover:border-gold transition-all flex items-center gap-1.5 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-tube-red group-hover:scale-125 transition-transform"></span>
+            <span>Mind The Gap</span>
+          </a>
+
+          <a href="#opiniones" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-navy-light/90 hover:bg-gold hover:text-navy border border-slate-700 hover:border-gold transition-all flex items-center gap-1.5 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-tube-red group-hover:scale-125 transition-transform"></span>
+            <span>Opiniones</span>
+          </a>
+
+          <a href="#faq" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-navy-light/90 hover:bg-gold hover:text-navy border border-slate-700 hover:border-gold transition-all flex items-center gap-1.5 group">
+            <span class="w-2.5 h-2.5 rounded-full bg-white border-2 border-tube-red group-hover:scale-125 transition-transform"></span>
+            <span>FAQ</span>
+          </a>
+        </nav>
+
+        <!-- ESTACIÓN DESTINO (BOTÓN DE RESERVA) -->
+        <div class="flex items-center gap-3">
+          <a href="#reserva" class="relative group inline-flex items-center gap-2 bg-gradient-to-r from-gold-bright to-gold text-navy-dark font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all uppercase tracking-wider label-mono">
+            <span class="bg-navy text-gold-bright text-[9px] font-black px-1.5 py-0.5 rounded uppercase">Destino</span>
+            <span>Reservar Asesoría</span>
+            <span class="text-sm">→</span>
+          </a>
+
+          <!-- Botón Menú Móvil -->
+          <button id="mobile-menu-btn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-lg bg-navy-light text-white hover:text-gold border border-slate-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- MENÚ MÓVIL DESPLEGABLE -->
+      <div id="mobile-menu" class="hidden lg:hidden pt-4 pb-2 border-t border-slate-800 mt-3 space-y-2">
+        <div class="text-[10px] uppercase font-bold text-gold-bright tracking-widest mb-1 px-2">Paradas de la línea:</div>
+        <a href="#servicios" class="block px-3 py-2 rounded-lg text-sm font-medium bg-navy-light text-slate-200 hover:bg-gold hover:text-navy">📍 Parada 1: Servicios y Tarifas</a>
+        <a href="#por-que-experto" class="block px-3 py-2 rounded-lg text-sm font-medium bg-navy-light text-slate-200 hover:bg-gold hover:text-navy">📍 Parada 2: Por qué un Experto vs IA</a>
+        <a href="#mind-the-gap" class="block px-3 py-2 rounded-lg text-sm font-medium bg-navy-light text-slate-200 hover:bg-gold hover:text-navy">📍 Parada 3: Mind The Gap</a>
+        <a href="#opiniones" class="block px-3 py-2 rounded-lg text-sm font-medium bg-navy-light text-slate-200 hover:bg-gold hover:text-navy">📍 Parada 4: Opiniones de Viajeros</a>
+        <a href="#faq" class="block px-3 py-2 rounded-lg text-sm font-medium bg-navy-light text-slate-200 hover:bg-gold hover:text-navy">📍 Parada 5: Preguntas Frecuentes</a>
+        <a href="#reserva" class="block px-3 py-2 rounded-lg text-sm font-bold bg-gold text-navy text-center uppercase tracking-wider mt-2">🏁 Estación Final: Reservar Cita</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO BANNER CON LOGO Y PRESENTACIÓN -->
+  <section class="relative bg-gradient-to-b from-navy-dark via-navy to-navy-light text-white overflow-hidden py-16 lg:py-24">
+    <!-- Patrón geométrico decorativo de fondo -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Texto principal -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold-bright px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider label-mono">
+            <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+            Asesoría 100% Personalizada por Residente
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
+            Descubre Londres <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-bright via-amber-300 to-gold">
+              a tu ritmo y a tu gusto
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Olvídate de itinerarios imposibles de internet. Diseñamos juntos tu viaje a medida según tus fechas, gustos y presupuesto para aprovechar cada minuto en la capital británica.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#reserva" class="w-full sm:w-auto bg-gradient-to-r from-gold-bright to-gold hover:from-gold hover:to-gold-bright text-navy-dark font-extrabold text-sm px-8 py-4 rounded-xl shadow-xl hover:shadow-gold/20 transition-all uppercase tracking-wider text-center label-mono">
+              Diseñar mi ruta con un experto →
+            </a>
+            <a href="#por-que-experto" class="w-full sm:w-auto bg-navy-light/80 hover:bg-slate-800 text-white font-semibold text-sm px-6 py-4 rounded-xl border border-slate-700 hover:border-gold transition-all text-center">
+              ¿Por qué evitar la IA?
+            </a>
+          </div>
+
+          <!-- Badges de confianza -->
+          <div class="pt-6 border-t border-slate-800 grid grid-cols-3 gap-2 text-center text-xs text-slate-400">
+            <div>
+              <p class="font-bold text-white text-sm">100% Humano</p>
+              <p class="text-[11px]">Sin respuestas genéricas</p>
+            </div>
+            <div>
+              <p class="font-bold text-white text-sm">Ahorro Garantizado</p>
+              <p class="text-[11px]">Optimizas pases y transporte</p>
+            </div>
+            <div>
+              <p class="font-bold text-white text-sm">Respuesta &lt;24h</p>
+              <p class="text-[11px]">Atención cercana por videollamada</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Muestra del Logo con efecto visual -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-gold via-amber-300 to-tube-red opacity-50 blur-xl group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative p-2 bg-navy-dark rounded-full border border-gold/30">
+              <img 
+                src="logo.png" 
+                alt="Londres a tu Gusto Logo" 
+                class="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x400/0f172a/f59e0b?text=Londres+a+tu+Gusto';"
+              >
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN BANNER: MIND THE GAP -->
+  <section id="mind-the-gap" class="max-w-6xl mx-auto px-4 sm:px-6 my-12">
+    <div class="bg-gradient-to-r from-navy-dark via-navy to-navy-light text-white rounded-2xl p-6 sm:p-10 border-2 border-tube-red/60 shadow-2xl relative overflow-hidden">
+      
+      <!-- Icono del Metro en esquina -->
+      <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+        <div class="w-64 h-64 rounded-full border-[30px] border-tube-red flex items-center justify-center">
+          <div class="w-80 h-16 bg-tube-blue"></div>
+        </div>
+      </div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-8 justify-between">
+        <!-- Señal icónica Mind The Gap -->
+        <div class="shrink-0 text-center">
+          <div class="inline-block bg-white text-navy-dark px-6 py-4 rounded-xl border-4 border-tube-red shadow-lg">
+            <div class="text-2xl sm:text-3xl font-black uppercase tracking-widest text-tube-red label-mono">
+              MIND THE GAP
+            </div>
+            <div class="text-[10px] font-bold text-navy uppercase tracking-wider border-t border-slate-200 mt-1 pt-0.5">
+              London Underground Safety Notice
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensaje directo de asesoría -->
+        <div class="space-y-3 text-center md:text-left max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">
+            Cierra la brecha entre la confusión y el viaje perfecto
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            No dejes tus vacaciones en manos de recomendaciones automatizadas o itinerarios imposibles. Diseñamos juntos una ruta lógica por áreas geográficas para evitar que pases la mitad del día encerrado en el metro o pagando entradas innecesarias.
+          </p>
+        </div>
+
+        <!-- Botón a la reserva -->
+        <div class="shrink-0 w-full md:w-auto">
+          <a href="#reserva" class="block w-full text-center bg-tube-red hover:bg-red-700 text-white font-extrabold text-xs px-6 py-4 rounded-xl transition-colors uppercase tracking-wider label-mono shadow-md">
+            Evitar errores y agendar cita →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN NUEVA: POR QUÉ ELEGIR UN EXPERTO Y NO LA IA / TIKTOK -->
+  <section id="por-que-experto" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-bold text-gold uppercase tracking-widest label-mono">Planificación Real vs. Algoritmos</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-navy mt-2">
+        ¿Por qué un Experto Local y NO una IA o un video de TikTok?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+        ChatGPT y las redes sociales prometen "el itinerario perfecto en 5 segundos", pero no conocen el ritmo real de la ciudad, los tiempos de transporte ni los imprevistos de un viajero.
+      </p>
+    </div>
+
+    <!-- Comparativa Visual -->
+    <div class="grid md:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- Tarjeta IA / TikTok -->
+      <div class="bg-red-50/60 border border-red-200 rounded-2xl p-6 sm:p-8 space-y-4">
+        <div class="flex items-center gap-3 border-b border-red-200 pb-4">
+          <div class="w-10 h-10 rounded-xl bg-red-100 text-tube-red flex items-center justify-center font-bold text-xl">
+            🤖
+          </div>
+          <div>
+            <h3 class="font-serif font-bold text-lg text-slate-900">Rutas generadas por IA / TikTok</h3>
+            <p class="text-xs text-red-700 font-medium">Itinerarios genéricos y desactualizados</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+          <li class="flex items-start gap-2.5">
+            <span class="text-tube-red font-bold text-base">✕</span>
+            <span><strong>Cruces absurdos de la ciudad:</strong> Te mandan de Camden a Greenwich en el mismo día, perdiendo 3 horas en transbordos.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-tube-red font-bold text-base">✕</span>
+            <span><strong>Desconocimiento de ritmos:</strong> Ponen 8 atracciones en un día como si no hubiera colas ni cansancio acumulado.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-tube-red font-bold text-base">✕</span>
+            <span><strong>Trampas turísticas:</strong> Te recomiendan lugares sobrevalorados solo porque son virales en redes sociales.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-tube-red font-bold text-base">✕</span>
+            <span><strong>Confusión con transporte:</strong> No te explican cómo pagar menos en metro, zonas tarifarias ni horarios recomendados.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta Asesoría Humana Experta -->
+      <div class="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-6 sm:p-8 space-y-4 relative shadow-sm">
+        <div class="absolute -top-3 right-6 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider label-mono">
+          Recomendado
+        </div>
+
+        <div class="flex items-center gap-3 border-b border-emerald-200 pb-4">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xl">
+            👤
+          </div>
+          <div>
+            <h3 class="font-serif font-bold text-lg text-slate-900">Asesoría "Londres a tu Gusto"</h3>
+            <p class="text-xs text-emerald-700 font-medium">Diseño a medida por un residente local</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold text-base">✓</span>
+            <span><strong>Rutas agrupadas por zonas:</strong> Optimizamos la geografía para ir caminando entre puntos cercanos sin perder tiempo.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold text-base">✓</span>
+            <span><strong>Adaptado a tu perfil real:</strong> Viajes con niños, en pareja o con presupuesto ajustado. Ritmo a tu medida.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold text-base">✓</span>
+            <span><strong>Locales auténticos:</strong> Recomendaciones de pubs con historia, mercados gastronómicos y miradores gratuitos.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-emerald-600 font-bold text-base">✓</span>
+            <span><strong>Resolución de dudas en tiempo real:</strong> Videollamada interactiva para resolver todas tus inquietudes específicas.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE SERVICIOS Y TARIFAS -->
+  <section id="servicios" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs font-bold text-gold uppercase tracking-widest label-mono">Servicios Personalizados</span>
+      <h2 class="text-3xl font-serif font-bold text-navy mt-1">Elige la modalidad que necesitas</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Servicio 1 -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-gold transition-colors">
+        <div>
+          <span class="text-2xl">💬</span>
+          <h3 class="font-serif font-bold text-xl text-navy mt-2">Sesión de Asesoría 1 a 1</h3>
+          <p class="text-xs text-slate-500 mt-1">Videollamada privada de 60 minutos</p>
+          <p class="text-2xl font-bold text-gold mt-4 font-mono">£45 <span class="text-xs text-slate-400 font-normal">/ sesión</span></p>
+          <ul class="text-xs text-slate-600 space-y-2 mt-4">
+            <li>✓ Análisis de tus ideas de viaje</li>
+            <li>✓ Guía de transporte y pases (Oyster/Contactless)</li>
+            <li>✓ Recomendación de zonas para alojamiento</li>
+            <li>✓ Resolución de dudas puntuales</li>
+          </ul>
+        </div>
+        <a href="#reserva" onclick="selectService('asesoria')" class="mt-6 block text-center bg-navy hover:bg-gold hover:text-navy text-white text-xs font-bold py-3 rounded-xl transition-colors uppercase tracking-wider label-mono">
+          Reservar esta sesión
+        </a>
+      </div>
+
+      <!-- Servicio 2 (Destacado) -->
+      <div class="bg-navy text-white rounded-2xl p-6 border-2 border-gold shadow-xl flex flex-col justify-between relative transform md:-translate-y-2">
+        <div class="absolute -top-3 right-4 bg-gold text-navy-dark text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider label-mono">
+          Más Popular
+        </div>
+        <div>
+          <span class="text-2xl">🗺️</span>
+          <h3 class="font-serif font-bold text-xl text-white mt-2">Itinerario Completo Express</h3>
+          <p class="text-xs text-slate-300 mt-1">Diseño de viaje para 3 a 4 días</p>
+          <p class="text-2xl font-bold text-gold-bright mt-4 font-mono">£85 <span class="text-xs text-slate-300 font-normal">/ proyecto</span></p>
+          <ul class="text-xs text-slate-300 space-y-2 mt-4">
+            <li>✓ Incluye la videollamada inicial</li>
+            <li>✓ PDF interactivo día por día detallado</li>
+            <li>✓ Rutas geográficas optimizadas paso a paso</li>
+            <li>✓ Links directos de reserva de atracciones</li>
+            <li>✓ Soporte por WhatsApp antes de tu viaje</li>
+          </ul>
+        </div>
+        <a href="#reserva" onclick="selectService('itinerario-express')" class="mt-6 block text-center bg-gold hover:bg-gold-bright text-navy-dark text-xs font-extrabold py-3 rounded-xl transition-colors uppercase tracking-wider label-mono">
+          Solicitar itinerario
+        </a>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-md flex flex-col justify-between hover:border-gold transition-colors">
+        <div>
+          <span class="text-2xl">👑</span>
+          <h3 class="font-serif font-bold text-xl text-navy mt-2">Itinerario Premium (5+ días)</h3>
+          <p class="text-xs text-slate-500 mt-1">Viajes largos o experiencias especiales</p>
+          <p class="text-2xl font-bold text-gold mt-4 font-mono">£120 <span class="text-xs text-slate-400 font-normal">/ proyecto</span></p>
+          <ul class="text-xs text-slate-600 space-y-2 mt-4">
+            <li>✓ Todo lo del paquete Express</li>
+            <li>✓ Excursiones fuera de Londres (Windsor, Oxford, etc.)</li>
+            <li>✓ Guía gastronómica y reservas en restaurantes</li>
+            <li>✓ Ajuste de plan B en caso de lluvia</li>
+          </ul>
+        </div>
+        <a href="#reserva" onclick="selectService('itinerario-premium')" class="mt-6 block text-center bg-navy hover:bg-gold hover:text-navy text-white text-xs font-bold py-3 rounded-xl transition-colors uppercase tracking-wider label-mono">
+          Solicitar itinerario
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO Y RESERVA (#reserva) -->
+  <section id="reserva" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 my-6">
+    <div class="bg-gradient-to-br from-navy-dark via-navy to-navy-light rounded-2xl p-6 sm:p-10 text-white shadow-xl border border-gold/30 relative overflow-hidden">
+      <!-- Decoración luminosa de fondo -->
+      <div class="absolute -right-20 -top-20 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Columna Informativa -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 text-gold-bright px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider label-mono">
+            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+            Contacto Directo
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
+            Diseñemos tu viaje ideal a Londres
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Completa el formulario con tus fechas e ideas iniciales. Te responderé en menos de **24 horas** para agendar nuestra sesión privada por videollamada y ponernos manos a la obra.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold-bright flex items-center justify-center font-bold shrink-0">
+                💬
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Asesoría 1 a 1 por Videollamada</h4>
+                <p class="text-xs text-slate-400">Resolvemos todas tus dudas de transporte, zonas, entradas y presupuesto.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold-bright flex items-center justify-center font-bold shrink-0">
+                🗺️
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Itinerario 100% Personalizado</h4>
+                <p class="text-xs text-slate-400">Ruta optimizada por días y áreas geográficas ajustada a tu ritmo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna del Formulario -->
+        <div class="lg:col-span-7 bg-white text-slate-900 p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100 relative">
+          
+          <form id="booking-form" onsubmit="handleBooking(event)" class="space-y-4">
+            <h3 class="text-xl font-serif font-bold text-navy mb-4 border-b border-slate-100 pb-3">
+              Reserva tu Sesión o Solicita Información
+            </h3>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  Nombre Completo *
+                </label>
+                <input type="text" id="nombre" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  Correo Electrónico *
+                </label>
+                <input type="email" id="email" required placeholder="tuemail@ejemplo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="telefono" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  Teléfono / WhatsApp (Opcional)
+                </label>
+                <input type="tel" id="telefono" placeholder="+34 600 000 000" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+              </div>
+
+              <div>
+                <label for="servicio-select" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  Tipo de Servicio *
+                </label>
+                <select id="servicio-select" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                  <option value="asesoria">Asesoría 1 a 1 por Videollamada (60 min)</option>
+                  <option value="itinerario-express">Itinerario Completo Express (3-4 días)</option>
+                  <option value="itinerario-premium">Itinerario Completo Premium (5+ días)</option>
+                  <option value="revision">Revisión de mi Itinerario Propio</option>
+                  <option value="otro">Consulta general</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="fechas" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  Fechas o Mes del Viaje
+                </label>
+                <input type="text" id="fechas" placeholder="Ej. 15 al 20 de Octubre" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+              </div>
+
+              <div>
+                <label for="acompanantes" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                  ¿Con quién viajas?
+                </label>
+                <select id="acompanantes" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium">
+                  <option value="pareja">En Pareja</option>
+                  <option value="familia">En Familia (con niños)</option>
+                  <option value="amigos">Grupo de Amigos</option>
+                  <option value="solo">En Solitario</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="mensaje" class="block text-xs font-bold uppercase tracking-wider text-navy mb-1.5">
+                Cuéntame un poco sobre tu viaje o tus dudas principales
+              </label>
+              <textarea id="mensaje" rows="3" placeholder="Ej. Es mi primera vez en Londres, queremos ver los lugares clásicos y algunos museos..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-gold text-sm outline-none bg-slate-50 font-medium"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-tube-red to-navy hover:from-navy hover:to-tube-red text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm uppercase tracking-wider label-mono cursor-pointer">
+              <span>Enviar mensaje y solicitar cita</span>
+              <span class="text-gold-bright">→</span>
+            </button>
+
+            <p class="text-[11px] text-slate-400 text-center mt-2">
+              🔒 Tus datos están totalmente seguros. Te responderé en menos de 24 horas.
+            </p>
+          </form>
+
+          <!-- Mensaje de confirmación -->
+          <div id="booking-success" class="hidden text-center py-10 space-y-4">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl animate-bounce">
+              ✓
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-navy">¡Solicitud recibida con éxito!</h3>
+            <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              Muchas gracias por ponerte en contacto. He recibido tus detalles y me comunicaré contigo al correo electrónico indicado en un plazo máximo de **24 horas** para agendar la cita.
+            </p>
+            <button onclick="document.getElementById('booking-success').classList.add('hidden'); document.getElementById('booking-form').classList.remove('hidden');" class="inline-block bg-navy text-gold-bright text-xs font-bold px-5 py-2.5 rounded-lg label-mono uppercase tracking-wider hover:bg-gold hover:text-navy transition-colors">
+              Enviar otra consulta
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-8">
+      <span class="text-xs font-bold text-gold uppercase tracking-widest label-mono">Resolvemos tus dudas</span>
+      <h2 class="text-3xl font-serif font-bold text-navy mt-1">Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="space-y-4">
+      <details class="bg-white border border-slate-200 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between font-bold text-navy cursor-pointer text-sm sm:text-base">
+          <span>¿Con cuánta antelación debo solicitar la asesoría?</span>
+          <span class="text-gold font-mono font-bold">+</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+          Lo ideal es hacer la sesión entre 2 y 4 semanas antes de viajar para poder reservar entradas gratuitas que requieren ticket con antelación (como el Sky Garden) o conseguir las mejores ofertas. Sin embargo, si tu viaje es esta semana, escríbeme y organizamos una sesión exprés.
+        </p>
+      </details>
+
+      <details class="bg-white border border-slate-200 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between font-bold text-navy cursor-pointer text-sm sm:text-base">
+          <span>¿Cómo se realiza el pago de la asesoría?</span>
+          <span class="text-gold font-mono font-bold">+</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+          Tras rellenar el formulario, nos pondremos en contacto por email/WhatsApp para fijar fecha y hora. El pago se realiza de manera segura mediante transferencia o tarjeta antes de la sesión.
+        </p>
+      </details>
+
+      <details class="bg-white border border-slate-200 rounded-xl p-4 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex items-center justify-between font-bold text-navy cursor-pointer text-sm sm:text-base">
+          <span>¿Qué incluye el PDF del Itinerario Completo?</span>
+          <span class="text-gold font-mono font-bold">+</span>
+        </summary>
+        <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+          Un documento digital optimizado para tu móvil con rutas detalladas hora a hora, mapas interactivos, recomendaciones de sitios para comer cerca de donde estés y enlaces directos para comprar las entradas sin colas.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA (FOOTER) CON IDENTIDAD DE METRO Y LOGO -->
+  <footer class="bg-navy-dark text-white border-t border-gold/30 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-12 gap-8 pb-8 border-b border-slate-800">
+        
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <img 
+              src="logo.png" 
+              alt="Londres a tu Gusto" 
+              class="w-10 h-10 rounded-full object-cover logo-glow"
+              onerror="this.onerror=null; this.src='https://placehold.co/100x100/0f172a/f59e0b?text=LTG';"
+            >
+            <span class="font-serif text-lg font-bold text-white">Londres a tu Gusto</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Diseño de experiencias únicas y rutas a medida por la capital británica. Sin bots, sin prisas y 100% adaptado a tus gustos.
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <h4 class="text-xs font-bold text-gold uppercase tracking-wider label-mono">Navegación</h4>
+          <ul class="text-xs text-slate-400 space-y-1.5">
+            <li><a href="#servicios" class="hover:text-gold transition-colors">Servicios y Tarifas</a></li>
+            <li><a href="#por-que-experto" class="hover:text-gold transition-colors">Por qué un Experto</a></li>
+            <li><a href="#mind-the-gap" class="hover:text-gold transition-colors">Mind The Gap</a></li>
+            <li><a href="#reserva" class="hover:text-gold transition-colors">Reservar Cita</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-2">
+          <div class="inline-block bg-white text-navy px-3 py-1.5 rounded border border-tube-red font-mono text-[10px] font-bold uppercase tracking-widest">
+            MIND THE GAP
+          </div>
+          <p class="text-xs text-slate-400">
+            Diseñado con pasión londinense. No afiliado oficialmente a Transport for London (TfL).
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
+        <p>© <span id="year"></span> Londres a tu Gusto. Todos los derechos reservados.</p>
+        <p>Londres, Reino Unido 🇬🇧</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVIDAD Y SCRIPT JS -->
+  <script>
+    // Año automático en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Pre-selección del servicio desde las tarjetas
+    function selectService(serviceType) {
+      const selectElem = document.getElementById('servicio-select');
+      if (selectElem) {
+        selectElem.value = serviceType;
+      }
+    }
+
+    // Manejo del envío del formulario de reserva
+    function handleBooking(event) {
+      event.preventDefault();
+      document.getElementById('booking-form').classList.add('hidden');
+      document.getElementById('booking-success').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
